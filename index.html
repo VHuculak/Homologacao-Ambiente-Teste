@@ -20,7 +20,7 @@
         <!-- <button onclick="window.open('https://congregacaocristanobrasil.org.br/', '_blank')">Site Oficial</button> -->
         <button onclick="mostrarServiços()">Serviços</button>
         <a href="musica.html"><button type="button">Área músical</button></a>
-        <a href="#"><button type="button" class="disabled">Santa Ceia</button></a>
+        <button onclick="mostrarSantaCeia()">Santa Ceia</button>
     </header>
 
     <main>
@@ -234,25 +234,102 @@
                 <button type="button" class="botao-limpar" onclick="limparFiltro()">Limpar</button>
             </div>
             <ul id="lista-serviços">
-                <h3>Batismos</h3>
-                <li>Batismo - Iguatemi – Central - 19/07/26 no Domingo às 18:30h - Ir. Izaias Valério</li>
-
-                <h3>Obra da Piedade</h3>
-                <li>Reunião de Ensinamento para Obra da Piedade - Paiçandu – Central - 19/07/26 no Domingo às 09:00h</li>
-
-                <h3>Reuniões de Mocidade</h3>
-                <li>Reunião de Mocidade - Jaguapitã - Central - 09/08/26 no Domingo às 14:00h - Ir. Adriano de Souza</li>
-
+                
                 <h3>Culto para Mocidade</h3>
-                <li>Culto para Mocidade - Sarandi - Central - 25/07/26 no Sábado às 19:00h - Ir. Elias Rodrigues Fermino</li>
-                <li>Culto para Mocidade - Mandaguaçu - Central - 25/07/26 no Sábado às 19:00h - Ir. Marcos Moreira</li>
-
-                <h3>Ensaio Regional (Geral)</h3>
-                <li>Ensaio Regional - Paiçandu – Central - 26/07/26 no Domingo às 09:00h - Ir. Eliseu Leles</li>
+                <li>Culto para Mocidade - Jardim Alvorada - 22/08/26 no Sábado às 19:00h - Ir. Carlos Eduardo da Silva Gomes</li>
+                <li>Culto para Mocidade - Conjunto Requião - 22/08/26 no Sábado às 19:00h - Ir. Eliseu Leles</li>
+                <li>Culto para Mocidade - Guaraci - 08/11/26 no Domingo às 18:30h - Ir. Clóvis Maciel de Oliviera</li>
+                
+                <h3>Reuniões de Mocidade</h3>
+                <li>Reunião de Mocidade - Jaguapitã – Central - 01/11/26 no Domingo às 14:00h - Ir. Adriano de Souza</li>
 
             </ul>
         </div>
 
+        <div id="pagina-santaceia" class="conteudo hidden">
+            <h2>Santa Ceia</h2>
+            <div class="busca-container">
+                <input id="busca-santaceia" placeholder="Digite a comum ou a data...">
+            </div>
+            <div>
+                <span class="">Filtrar por:</span>
+                <button type="button" class="botao-filtrar" onclick="filtrarHoje()">Hoje</button>
+                <button type="button" class="botao-limpar" onclick="limparFiltro()">Limpar</button>
+                </div>
+                    <ul id="lista-santaceia">
+                        <h4>04/10/2026 - Domingo</h4>
+                        <li id="santaceia-vila-santa-izabel">Vila Santa Izabel - 18:30h - Ir. João Marinho</li>
+
+                        <h4>10/10/2026 - Sábado</h4>
+                        <li id="santaceia-parque-taruma">Parque Tarumã - 18:30h - Ir. Isaías Valério</li>
+                        <li id="santaceia-jardim-olimpico">Jardim Olimpico - 19:00h - Ir. Valter L. Araújo</li>
+
+                        <h4>11/10/2026 - Domingo</h4>
+                        <li id="santaceia-jardim-veronica">Jardim Verônica - 18:30h - Ir. Oséias Gonçalves</li>
+                        <li id="santaceia-floriano">Floriano - 18:30h - Ir. Clóvis Maciel</li>
+                        <li id="santaceia-conjunto-guaiapo">Conj. Guaiapó - 18:30h - Ir. Laerte Tolentino</li>
+                        <li id="santaceia-jardim-catedral">Jardim Catedral - 18:30h - Ir. Isaías Valério</li>
+                        <li id="santaceia-jardim-olimpico">Jardim Olimpico - 18:30h - Ir. Valter L. Araújo</li>
+
+                        <h4>17/10/2026 - Sábado</h4>
+                        <li id="santaceia-jardim-ouro-cola">Jardim Ouro Cola - 19:00h - Ir. João Marinho</li>
+                        <li id="santaceia-vila-morangueira">Vila Morangueira - 18:30h - Ir. Clóvis Maciel</li>
+                        <li id="santaceia-jardim-alvorada-ebenezer">Jd. Alvorada 3ª Parte (Ebenezer) - 18:30h - Ir. Laerte Tolentino</li>
+                        <li id="santaceia-parque-hortencia-1">Jardim Continental - 19:00h - Ir. Valter L. Araújo</li>
+                        <li id="santaceia-parque-das-laranjeiras">Parque das Laranjeiras - 19:00h - Ir. Márcio Valério</li>
+
+                        <h4>18/10/2026 - Domingo</h4>
+                        <li id="santaceia-maringa-velho">Maringá Velho - 18:30h - Ir. João Marinho</li>
+                        <li id="santaceia-vila-morangueira">Vila Morangueira - 18:00h - Ir. Clóvis Maciel</li>
+                        <li id="santaceia-loteamento-sumare">Loteamento Sumaré - 18:30h - Ir. Laerte Tolentino</li>
+                        <li id="santaceia-conjunto-requiao">Conjunto Requião - 18:30h - Ir. Aldemar Meneguetti</li>
+                        <li id="santaceia-parque-hortencia-1">Parque Hortência - 18:30h - Ir. Valter L. Araújo</li>
+                        <li id="santaceia-parque-das-laranjeiras">Parque das Laranjeiras - 18:30h - Ir. Márcio Valério</li>
+
+                        <h4>24/10/2026 - Sábado</h4>
+                        <li id="santaceia-jardim-universo">Jardim Universo - 18:30h - Ir. Clóvis Maciel</li>
+                        <li id="santaceia-jardim-piata">Jardim Piatã - 18:30h - Ir. Salatiel Dias</li>
+
+                        <h4>25/10/2026 - Domingo</h4>
+                        <li id="santaceia-jardim-oriental-diamante">Jardim Diamante - 18:30h - Ir. João Marinho</li>
+                        <li id="santaceia-jardim-espanha">Jardim Espanha - 18:30h - Ir. Clóvis Maciel</li>
+                        <li id="santaceia-vila-operaria">Vila Operária - 18:30h - Ir. Isaías Valério</li>
+                        <li id="santaceia-jardim-liberdade">Jardim Liberdade - 18:30h - Ir. Aldemar Meneguetti</li>
+
+                        <h4>31/10/2026 - Sábado</h4>
+                        <li id="santaceia-jardim-indaia">Jardim Montreal (Indaiá) - 19:00h - Ir. José A. Reis</li>
+
+                        <h4>01/11/2026 - Domingo</h4>
+                        <li id="santaceia-jardim-bertioga">Jd. Res. Aeroporto (Bertioga) - 18:30h - Ir. Isaías Valério</li>
+                        <li id="santaceia-parque-tuiuti">Parque Res. Tuiuti - 18:30h - Ir. Aldemar Meneguetti</li>
+                        <li id="santaceia-jardim-vitoria">Jardim Vitória - 18:30h - Ir. Gustavo Fernandes</li>
+
+                        <h4>07/11/2026 - Sábado</h4>
+                        <li id="santaceia-vila-santo-antonio">Vila Santo Antonio - 18:30h - Ir. Luiz S. Mendes</li>
+
+                        <h4>08/11/2026 - Domingo</h4>
+                        <li id="santaceia-vila-santo-antonio">Vila Santo Antonio - 14:00h - Ir. Laerte Tolentino</li>
+                        <li id="santaceia-parque-itaipu">Parque Itaipu - 18:30h - Ir. Isaías Valério</li>
+                        <li id="santaceia-parque-avenida">Parque Avenida - 18:30h - Ir. Márcio Valério</li>
+                        <li id="santaceia-jardim-vitoria">Jardim Vitória - 18:30h - Ir. Gustavo Fernandes</li>
+                        <li id="santaceia-jardim-oriental-diamante">Jardim Bela Vista - 18:30h - Ir. Rodrigo Garcia</li>
+
+                        <h4>14/11/2026 - Sábado</h4>
+                        <li id="santaceia-jardim-monte-rei">Jardim Monte Rei - 19:00h - Ir. Márcio Valério</li>
+
+                        <h4>15/11/2026 - Domingo</h4>
+                        <li id="santaceia-centro-central">Maringá Central - 18:00h - Ir. Geter Valério</li>
+                        <li id="santaceia-jardim-monte-rei">Jardim Monte Rei - 18:30h - Ir. Márcio Valério</li>
+
+                        <h4>22/11/2026 - Domingo</h4>
+                        <li id="santaceia-jardim-alvorada">Jardim Alvorada - 18:30h - Ir. Nelson Pereira</li>
+                        <li id="santaceia-centro-central">Maringá Central - 18:00h - Ir. Gustavo Fernandes</li>
+
+                        <h4>29/11/2026 - Domingo</h4>
+                        <li id="santaceia-iguatemi">Iguatemi - 18:30h - Ir. José A. Reis</li>
+                    </ul>
+                </div>
+                        
     </main>
 
     <div id="modal-overlay" class="hidden">

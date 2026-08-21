@@ -1,6 +1,7 @@
 // --- Elementos da Página ---
 const paginaCultos = document.getElementById('pagina-cultos');
 const paginaEnsaios = document.getElementById('pagina-ensaios');
+const paginaSantaCeia = document.getElementById('pagina-santaceia');
 const paginaEventos = document.getElementById('pagina-serviços');
 const modalOverlay = document.getElementById('modal-overlay');
 const modalFechar = document.getElementById('modal-fechar');
@@ -10,19 +11,29 @@ const modalFechar = document.getElementById('modal-fechar');
 function mostrarCultos() {
     paginaEventos.classList.add('hidden');
     paginaEnsaios.classList.add('hidden');
+    paginaSantaCeia.classList.add('hidden');
     paginaCultos.classList.remove('hidden');
 }
 
 function mostrarEnsaios() {
     paginaCultos.classList.add('hidden');
     paginaEventos.classList.add('hidden');
+    paginaSantaCeia.classList.add('hidden');
     paginaEnsaios.classList.remove('hidden');
 }
 
 function mostrarServiços() {
     paginaEnsaios.classList.add('hidden');
     paginaCultos.classList.add('hidden');
+    paginaSantaCeia.classList.add('hidden');
     paginaEventos.classList.remove('hidden');
+}
+
+function mostrarSantaCeia() {
+    paginaEnsaios.classList.add('hidden');
+    paginaCultos.classList.add('hidden');
+    paginaEventos.classList.add('hidden');
+    paginaSantaCeia.classList.remove('hidden');
 }
 
  /* Remove acentos para facilitar a busca */
@@ -88,6 +99,7 @@ function obterListaVisivel() {
     if (!paginaCultos.classList.contains('hidden')) return document.getElementById('lista-cultos');
     if (!paginaEnsaios.classList.contains('hidden')) return document.getElementById('lista-ensaios');
     if (!paginaEventos.classList.contains('hidden')) return document.getElementById('lista-serviços');
+    if (!paginaSantaCeia.classList.contains('hidden')) return document.getElementById('lista-santaceia');
     return null;
 }
 
@@ -115,7 +127,7 @@ function filtrarHoje() {
 }
 
 function limparFiltro() {
-    const listaIds = ['lista-cultos', 'lista-ensaios', 'lista-serviços'];
+    const listaIds = ['lista-cultos', 'lista-ensaios', 'lista-serviços', 'lista-santaceia'];
     listaIds.forEach(function(id) {
         const lista = document.getElementById(id);
         if (!lista) return;
@@ -125,7 +137,7 @@ function limparFiltro() {
         }
     });
 
-    ['busca-cultos', 'busca-ensaio', 'busca-serviços'].forEach(function(id) {
+    ['busca-cultos', 'busca-ensaio', 'busca-serviços', 'busca-santaceia'].forEach(function(id) {
         const input = document.getElementById(id);
         if (input) {
             input.value = '';
@@ -147,6 +159,8 @@ function abrirModal(idClicado) {
     // A MÁGICA AQUI: Se for um ensaio, troca a palavra para procurar como culto no Array
     if (idClicado.startsWith('ensaio-')) {
         idParaBusca = idClicado.replace('ensaio-', 'culto-');
+    }else if (idClicado.startsWith('santaceia-')) {
+        idParaBusca = idClicado.replace('santaceia-', 'culto-');
     }
 
     // Busca a congregação no array que está no seu outro arquivo
@@ -189,7 +203,18 @@ for (let i = 0; i < itensEnsaios.length; i++) {
     });
 };
 
+const itensSantaCeia = document.getElementById('lista-santaceia').getElementsByTagName('li');
+for (let i = 0; i < itensSantaCeia.length; i++) {
+    itensSantaCeia[i].addEventListener('click', function() {
+        // Só tenta abrir se a li tiver um ID cadastrado no HTML
+        if (this.id) {
+            abrirModal(this.id);
+        }
+    });
+};
+
 // --- Inicialização das Buscas ---
 configurarBusca('busca-cultos', 'lista-cultos');
 configurarBusca('busca-ensaio', 'lista-ensaios');
 configurarBusca('busca-serviços', 'lista-serviços');
+configurarBusca('busca-santaceia', 'lista-santaceia');
